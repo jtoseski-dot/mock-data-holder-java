@@ -1,4 +1,4 @@
-FROM openjdk:8-jre
+FROM eclipse-temurin:17-jre
 LABEL maintainer="Data Standards Body <dev@consumerdatastandards.gov.au>"
 
 EXPOSE 8383/tcp
@@ -8,5 +8,5 @@ ADD keystore /keystore
 ARG JAR_FILE
 ADD target/${JAR_FILE} /opt/cds-java-artefacts/data-holder.jar
 
-ENTRYPOINT ["/usr/local/openjdk-8/bin/java", "-jar", "/opt/cds-java-artefacts/data-holder.jar"]
+ENTRYPOINT ["java", "-jar", "/opt/cds-java-artefacts/data-holder.jar"]
 

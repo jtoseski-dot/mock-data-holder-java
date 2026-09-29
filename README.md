@@ -61,7 +61,7 @@ This solution:
 Before you begin, ensure you have the following installed:
 
 - Git, for cloning the repository.
-- Java 8 (JDK 1.8)
+- Java 17 (JDK 17)
 - Maven 3
 
 ### Installation
