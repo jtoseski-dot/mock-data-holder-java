@@ -33,10 +33,11 @@
 	</scm>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<maven.compiler.version>3.8.1</maven.compiler.version>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
+		<maven.compiler.version>3.11.0</maven.compiler.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<build-helper.plugin.version>3.0.0</build-helper.plugin.version>
 		<surefire.plugin.version>3.0.0-M3</surefire.plugin.version>
@@ -131,8 +132,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.version}</version>
 				<configuration>
-					<source>${maven.compiler.source}</source>
-					<target>${maven.compiler.target}</target>
+					<release>${maven.compiler.release}</release>
 				</configuration>
 			</plugin>
             <plugin>
