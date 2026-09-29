@@ -33,29 +33,31 @@
 	</scm>
 
 	<properties>
-		<java.version>1.8</java.version>
-		<maven.compiler.source>${java.version}</maven.compiler.source>
-		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<maven.compiler.version>3.8.1</maven.compiler.version>
+		<java.version>17</java.version>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
+		<maven.compiler.version>3.13.0</maven.compiler.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<build-helper.plugin.version>3.0.0</build-helper.plugin.version>
-		<surefire.plugin.version>3.0.0-M3</surefire.plugin.version>
+		<surefire.plugin.version>3.2.5</surefire.plugin.version>
 		<maven-source.plugin.version>3.1.0</maven-source.plugin.version>
 		<maven-deploy.plugin.version>2.8.2</maven-deploy.plugin.version>
-		<nexus-staging.plugin.version>1.6.8</nexus-staging.plugin.version>
+		<nexus-staging.plugin.version>1.6.13</nexus-staging.plugin.version>
 		<dockerfile-maven.version>1.4.12</dockerfile-maven.version>
-		<source.plugin.version>2.2.1</source.plugin.version>
+		<source.plugin.version>3.3.1</source.plugin.version>
 		<release.plugin.version>3.0.0-M5</release.plugin.version>
-		<gpg.plugin.version>1.5</gpg.plugin.version>
-		<javadoc.plugin.version>2.9.1</javadoc.plugin.version>
+		<gpg.plugin.version>3.2.4</gpg.plugin.version>
+		<javadoc.plugin.version>3.6.3</javadoc.plugin.version>
 		<commons-lang3.version>3.8.1</commons-lang3.version>
 		<jackson.version>2.10.1</jackson.version>
 		<jackson-databind-nullable.version>0.2.0</jackson-databind-nullable.version>
 		<junit.version>5.5.0</junit.version>
-		<jacoco.version>0.8.4</jacoco.version>
+		<jacoco.version>0.8.12</jacoco.version>
 		<swagger-core.version>1.5.24</swagger-core.version>
 		<spring-boot.version>2.7.18</spring-boot.version>
 		<validation-api.version>2.0.1.Final</validation-api.version>
+		<jakarta-annotation-api.version>1.3.5</jakarta-annotation-api.version>
+		<jakarta-xml-bind.version>2.3.3</jakarta-xml-bind.version>
+		<glassfish-jaxb.version>2.3.8</glassfish-jaxb.version>
 		<commons-validator.version>1.6</commons-validator.version>
 		<commons-codec.version>1.13</commons-codec.version>
 		<springfox.version>2.9.2</springfox.version>
@@ -131,8 +133,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.version}</version>
 				<configuration>
-					<source>${maven.compiler.source}</source>
-					<target>${maven.compiler.target}</target>
+					<release>${maven.compiler.release}</release>
 				</configuration>
 			</plugin>
             <plugin>
@@ -209,7 +210,7 @@
 				<version>${javadoc.plugin.version}</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>8</source>
+					<source>${java.version}</source>
 				</configuration>
 				<executions>
 					<execution>
@@ -377,6 +378,21 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>${jakarta-annotation-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>${jakarta-xml-bind.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>${glassfish-jaxb.version}</version>
         </dependency>
         <dependency>
 			<groupId>javax.validation</groupId>
